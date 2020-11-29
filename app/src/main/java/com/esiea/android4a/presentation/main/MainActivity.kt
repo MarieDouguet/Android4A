@@ -1,8 +1,9 @@
-package com.esiea.android4a
+package com.esiea.android4a.presentation.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.Observer
+import com.esiea.android4a.R
 import kotlinx.android.synthetic.main.activity_main.*
 import org.koin.android.ext.android.inject
 
@@ -15,7 +16,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         main_button.setOnClickListener{
-            mainViewModel.onClickedIncrement()
+            mainViewModel.onClickedIncrement(emailUser = "")
         }
 
         mainViewModel.counter.observe(this, Observer {
