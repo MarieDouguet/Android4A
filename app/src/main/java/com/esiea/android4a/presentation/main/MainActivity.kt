@@ -6,11 +6,11 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Html
 import android.util.Log
+import android.view.animation.AnimationUtils
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
 import androidx.lifecycle.Observer
-import com.esiea.android4a.PokemonList
-import com.esiea.android4a.PokemonListAdapter
 import com.esiea.android4a.R
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import kotlinx.android.synthetic.main.activity_create_account.*
@@ -32,6 +32,10 @@ class MainActivity : AppCompatActivity() {
         val btn_account = findViewById(R.id.create_account_button) as Button
         val btn_login = findViewById(R.id.login_button) as Button
         //val navController = findNavController()
+
+        val image: ImageView = findViewById(R.id.pokemon)
+        val slideAnimation = AnimationUtils.loadAnimation(this, R.anim.slide_down)
+        image.startAnimation(slideAnimation)
 
         /*mainViewModel.loginLiveData.observe(this, Observer {
             when (it) {
@@ -61,7 +65,7 @@ class MainActivity : AppCompatActivity() {
         })*/
 
         btn_login.setOnClickListener {
-            val intent = Intent(this, ListPokemonActivity::class.java)
+            val intent = Intent(this, PokemonListActivity::class.java)
             startActivity(intent)
         }
         btn_account.setOnClickListener {

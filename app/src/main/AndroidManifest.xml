@@ -13,10 +13,7 @@
         android:label="Pokemon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity
-            android:name=".presentation.main.ListPokemonActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        </activity>
+        <activity android:name=".presentation.main.PokemonListActivity" />
         <activity
             android:name=".presentation.main.SplashActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
@@ -27,7 +24,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".presentation.main.CreateAccount" />
-        <activity android:name=".presentation.main.MainActivity" />
+        <activity
+            android:name=".presentation.main.MainActivity" />
     </application>
 
 </manifest>

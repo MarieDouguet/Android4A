@@ -1,23 +1,21 @@
 package com.esiea.android4a.data.local.models
 
-class Pokemon {
-
-    var id:Int=0
-    var num:String?=null
-    var name:String?=null
-    var img:String?=null
-    var type:List<String>?=null
-    var height:String?=null
-    var weight:String?=null
-    var candy:String?=null
-    var candy_count:Int=0
-    var egg:String?=null
-    var spawn_chance:Double=0.toDouble()
-    var avg_spawns:Double=0.toDouble()
-    var spawn_time:String?=null
-    var multipliers:List<Double>?=null
-    var weeknesses:List<String>?=null
-    var next_evolution:List<Evolution>?=null
-    var prev_evolution:List<Evolution>?=null
-
-}
+data class Pokemon(
+    val id: Int,
+    val num: String,
+    val name: String
+    // var img:String,
+    //var type:List<String>
+    /*var height:String,
+    var weight:String,
+    var candy:String,
+    var candy_count:Int,
+    var egg:String,
+    var spawn_chance:Double,
+    var avg_spawns:Double,
+    var spawn_time:String,
+    var multipliers:List<Double>,
+    var weeknesses:List<String>,
+    var next_evolution:List<Evolution>,
+    var prev_evolution:List<Evolution>*/
+)

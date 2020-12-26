@@ -26,6 +26,10 @@ android {
     dataBinding {
         enabled true
     }
+    compileOptions {
+        targetCompatibility = "8"
+        sourceCompatibility = "8"
+    }
 }
 
 dependencies {
@@ -35,7 +39,7 @@ dependencies {
     def room_version = "2.2.6"
     def life_versions = "2.2.0"
 
-    ext.retrofit_version = '2.6.0'
+    ext.retrofit_version = '2.9.0'
     ext.okhttp_version = '3.11.0'
 
     //ANDROID
