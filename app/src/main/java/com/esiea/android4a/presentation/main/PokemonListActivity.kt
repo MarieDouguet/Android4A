@@ -27,7 +27,8 @@ class PokemonListActivity : AppCompatActivity() {
         val api = retrofit.create(ApiService::class.java)
         api.fetchAllPokemon().enqueue(object : Callback<List<Pokemon>> {
             override fun onResponse(call: Call<List<Pokemon>>, response: Response<List<Pokemon>>) {
-                d("pokemon", "onResponse ")
+                //d("pokemon", "onResponse : ${response.body()!![0].name} ")
+                showData(response.body()!!)
             }
 
             override fun onFailure(call: Call<List<Pokemon>>, t: Throwable) {
@@ -36,11 +37,11 @@ class PokemonListActivity : AppCompatActivity() {
 
         })
 
-        val pokemonList = mutableListOf<Pokemon>()
-        for (i in 0..100) {
-            pokemonList.add(Pokemon(1, "1", "pikachu"))
-        }
 
+
+    }
+
+    private fun showData(pokemonList: List<Pokemon>) {
         recyclerView.apply {
             layoutManager = LinearLayoutManager(this@PokemonListActivity)
             adapter = PokemonAdapter(pokemonList)
