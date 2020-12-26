@@ -3,22 +3,31 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.esiea.android4a">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:name=".injection.EsieaApplication"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:icon="@mipmap/ic_launcher_round"
+        android:label="Pokemon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".presentation.main.CreateAccount"></activity>
-        <activity android:name=".presentation.main.MainActivity">
+        <activity
+            android:name=".presentation.main.ListPokemonActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        </activity>
+        <activity
+            android:name=".presentation.main.SplashActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".presentation.main.CreateAccount" />
+        <activity android:name=".presentation.main.MainActivity" />
     </application>
 
 </manifest>
