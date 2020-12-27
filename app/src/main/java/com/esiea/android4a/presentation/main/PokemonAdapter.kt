@@ -10,26 +10,26 @@ import com.esiea.android4a.data.local.models.Pokemon
 import kotlinx.android.synthetic.main.pokemon_row.view.*
 
 class PokemonAdapter(private val pokemonList: List<Pokemon>) :
-    RecyclerView.Adapter<PokemonAdapter.ViewHolder>() {
+    RecyclerView.Adapter<PokemonAdapter.PokemonViewHolder>() {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PokemonViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.pokemon_row, parent, false)
-        return ViewHolder(view)
+        return PokemonViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val pokemon = pokemonList[position]
-        holder.pokemon_name.text = pokemon.name
-        holder.pokemon_type.text=pokemon.num
+    override fun onBindViewHolder(holder: PokemonViewHolder, position: Int) {
+        val pokemon = pokemonList.elementAtOrNull(position)
+        holder.pokemon_name.text = pokemon?.name
+        holder.pokemon_type.text=pokemon?.num
     }
 
     override fun getItemCount(): Int {
         return pokemonList.size
     }
 
-    class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
-        val pokemon_name: TextView = itemView.pokemon_name
-        val pokemon_type : TextView = itemView.pokemon_type
+    class PokemonViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
+        val pokemon_name: TextView = itemView.findViewById(R.id.pokemon_name)
+        val pokemon_type : TextView = itemView.findViewById(R.id.pokemon_type)
     }
 
 
