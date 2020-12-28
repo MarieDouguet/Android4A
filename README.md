@@ -24,7 +24,7 @@ Projet de programmation web orientée mobile 4A en __Kotlin__.
 * Design
 * Quelques tests unitaires
 * Fonction(s) supplémentaire(s) : 
- * Ecran avec le détail d'un élément de la liste 
+   * Ecran avec le détail d'un élément de la liste 
 
 
 ## Fonctionnalités
