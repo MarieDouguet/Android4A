@@ -6,6 +6,6 @@ import kotlinx.android.parcel.Parcelize
 
 data class Result(
 
-    val pokemon:List<Pokemon>
+    val pokemon:MutableList<Pokemon>
 
 )

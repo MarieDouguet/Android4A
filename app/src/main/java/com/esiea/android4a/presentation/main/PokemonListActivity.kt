@@ -1,7 +1,11 @@
 package com.esiea.android4a.presentation.main
 
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.util.Log
+import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -19,15 +23,34 @@ import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import java.io.IOException
 import com.esiea.android4a.data.local.models.Result
+import kotlinx.android.synthetic.main.activity_main.*
 
 
 class PokemonListActivity : AppCompatActivity() {
     lateinit var recyclerView: RecyclerView
+    lateinit var editTextSearch: EditText
+    lateinit var pokemonList: MutableList<Pokemon>
+    lateinit var mAdapter: PokemonAdapter
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.content_pokemon_list)
 
+        editTextSearch = findViewById(R.id.et_search)
+
+        editTextSearch.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+            }
+
+            override fun afterTextChanged(s: Editable?) {
+                filterList(s.toString())
+            }
+
+        })
         val moshi = Moshi.Builder()
             .add(KotlinJsonAdapterFactory())
             .build()
@@ -41,7 +64,7 @@ class PokemonListActivity : AppCompatActivity() {
         val api = retrofit.create(ApiService::class.java)
         api.fetchAllPokemon().enqueue(object : Callback<Result> {
             override fun onResponse(call: Call<Result>, response: Response<Result>) {
-                if (response.body()!!.pokemon.isNotEmpty()){
+                if (response.body()!!.pokemon.isNotEmpty()) {
                     showData(response.body()!!.pokemon)
                 }
                 Toast.makeText(this@PokemonListActivity, "response successful", Toast.LENGTH_LONG)
@@ -62,16 +85,23 @@ class PokemonListActivity : AppCompatActivity() {
         })
     }
 
-    private fun showData(pokemonList: List<Pokemon>) {
+    private fun filterList(filterItem: String) {
+
+        var tempList: ArrayList<Pokemon> = ArrayList()
+        var List: MutableList<Pokemon> = pokemonList
+
+        for (d in List) {
+            if (filterItem in d.name) {
+                tempList.add(d)
+
+            }
+        }
+        mAdapter.updateList(tempList)
+    }
+
+    private fun showData(pokemonList: MutableList<Pokemon>) {
         recyclerView = findViewById(R.id.recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(this@PokemonListActivity)
         recyclerView.adapter = PokemonAdapter(pokemonList)
-
-
-        /* recyclerView.apply {
-             layoutManager = LinearLayoutManager(this@PokemonListActivity)
-             myAdapter = PokemonAdapter(pokemonList)
-         }*/
-
     }
 }

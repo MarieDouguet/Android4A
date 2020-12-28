@@ -12,7 +12,9 @@
         android:icon="@mipmap/ic_launcher_round"
         android:label="Pokemon"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".presentation.main.DetailPokemonActivity"></activity>
         <activity android:name=".presentation.main.PokemonListActivity" />
         <activity
             android:name=".presentation.main.SplashActivity"
@@ -24,8 +26,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".presentation.main.CreateAccount" />
-        <activity
-            android:name=".presentation.main.MainActivity" />
+        <activity android:name=".presentation.main.MainActivity" />
     </application>
 
 </manifest>
