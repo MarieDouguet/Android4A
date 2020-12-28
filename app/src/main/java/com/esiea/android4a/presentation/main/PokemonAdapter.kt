@@ -9,15 +9,11 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
-import com.bumptech.glide.request.target.SimpleTarget
 import com.esiea.android4a.R
 import com.esiea.android4a.data.local.models.Pokemon
-import kotlinx.android.synthetic.main.content_pokemon_list.view.*
-import kotlinx.android.synthetic.main.pokemon_row.view.*
-import java.util.*
-import kotlin.collections.ArrayList
 
-class PokemonAdapter(private val pokemonList: MutableList<Pokemon>) :
+
+class PokemonAdapter(private val pokemonList: MutableList<Pokemon>, var clickListener: OnPokemonItemClickListener) :
     RecyclerView.Adapter<PokemonAdapter.PokemonViewHolder>() {
 
 
@@ -27,7 +23,7 @@ class PokemonAdapter(private val pokemonList: MutableList<Pokemon>) :
     }
 
     override fun onBindViewHolder(holder: PokemonViewHolder, position: Int) {
-        val pokemon = pokemonList.elementAtOrNull(position)
+       /* val pokemon = pokemonList.elementAtOrNull(position)
         holder.pokemon_name.text = pokemon?.name
         holder.pokemon_type.text = pokemon?.type.toString()
 
@@ -36,7 +32,9 @@ class PokemonAdapter(private val pokemonList: MutableList<Pokemon>) :
             .override(1000, 1000)
             .centerCrop()
             .diskCacheStrategy(DiskCacheStrategy.ALL)
-            .into(holder.pokemon_image)
+            .into(holder.pokemon_image)*/
+
+        holder.initialize(pokemonList.get(position), clickListener)
     }
 
     override fun getItemCount(): Int {
@@ -47,11 +45,24 @@ class PokemonAdapter(private val pokemonList: MutableList<Pokemon>) :
         val pokemon_name: TextView = itemView.findViewById(R.id.pokemon_name)
         val pokemon_type: TextView = itemView.findViewById(R.id.pokemon_type)
         val pokemon_image: ImageView = itemView.findViewById(R.id.pokemon_image)
+
+        fun initialize(pokemon: Pokemon, action:OnPokemonItemClickListener){
+            pokemon_name.text = pokemon.name
+            pokemon_type.text = pokemon.type.toString()
+            Glide.with(itemView.context)
+                .load(pokemon?.img)
+                .override(1000, 1000)
+                .centerCrop()
+                .diskCacheStrategy(DiskCacheStrategy.ALL)
+                .into(pokemon_image)
+
+            itemView.setOnClickListener(){
+                action.onItemClick(pokemon, adapterPosition)
+            }
+        }
     }
 
-    fun updateList(list : MutableList<Pokemon>){
-        var pokemonlist = pokemonList
-        pokemonlist = list
-        notifyDataSetChanged()
+    interface OnPokemonItemClickListener{
+        fun onItemClick(pokemon: Pokemon, position: Int)
     }
 }

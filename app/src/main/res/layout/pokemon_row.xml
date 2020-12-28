@@ -7,14 +7,17 @@
     android:layout_margin="8dp"
     android:padding="6dip"
     app:cardBackgroundColor="@color/colorAccent"
-    app:cardElevation="@dimen/spacing">
+    app:cardElevation="@dimen/spacing"
+    android:clickable="true"
+    android:focusable="true"
+    android:checkable="true">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <!-- Media -->
+        <!-- image  -->
         <ImageView
             android:id="@+id/pokemon_image"
             android:layout_width="match_parent"
@@ -29,7 +32,6 @@
             android:padding="16dp"
             android:gravity="center">
 
-            <!-- Title, secondary and supporting text -->
             <TextView
                 android:id="@+id/pokemon_name"
                 android:layout_width="wrap_content"

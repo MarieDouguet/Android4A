@@ -26,6 +26,7 @@ android {
     dataBinding {
         enabled true
     }
+
     compileOptions {
         targetCompatibility = "8"
         sourceCompatibility = "8"
@@ -109,4 +110,7 @@ dependencies {
     //MOSHI
     implementation "com.squareup.moshi:moshi:$version_moshi"
     implementation "com.squareup.moshi:moshi-kotlin:$version_moshi"
+
+    //PICASSO
+    implementation 'com.squareup.picasso:picasso:2.71828'
 }
