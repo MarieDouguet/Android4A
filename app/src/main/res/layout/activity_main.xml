@@ -47,7 +47,7 @@
         app:layout_constraintTop_toBottomOf="@id/login_input_layout"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/login_button"
+        app:layout_constraintBottom_toTopOf="@id/signIn_button"
         app:endIconMode="password_toggle">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -60,10 +60,10 @@
 
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/login_button"
+        android:id="@+id/signIn_button"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Login"
+        android:text="Sign In"
         android:layout_marginTop="30dp"
         app:layout_constraintBottom_toTopOf="@id/create_account_button"
         app:layout_constraintLeft_toLeftOf="@id/create_account_button"
@@ -79,7 +79,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/login_button"
+        app:layout_constraintTop_toBottomOf="@+id/signIn_button"
         android:text="Create Account" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

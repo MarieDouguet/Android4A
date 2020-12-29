@@ -10,6 +10,7 @@ import android.view.animation.AnimationUtils
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
+import android.widget.Toast
 import androidx.lifecycle.Observer
 import com.esiea.android4a.R
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
@@ -29,18 +30,19 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        val btn_account = findViewById(R.id.create_account_button) as Button
-        val btn_login = findViewById(R.id.login_button) as Button
-        //val navController = findNavController()
+        val btn_account: Button = findViewById(R.id.create_account_button)
+        val btn_signIn: Button = findViewById(R.id.signIn_button)
+        val login: EditText = findViewById(R.id.login_edit)
+
 
         val image: ImageView = findViewById(R.id.pokemon)
         val slideAnimation = AnimationUtils.loadAnimation(this, R.anim.slide_down)
         image.startAnimation(slideAnimation)
 
-        /*mainViewModel.loginLiveData.observe(this, Observer {
+        mainViewModel.loginLiveData.observe(this, Observer {
             when (it) {
                 is LoginSuccess -> {
-
+                    Toast.makeText(this, login.text, Toast.LENGTH_LONG).show()
                 }
                 LoginError -> {
                     MaterialAlertDialogBuilder(this)
@@ -61,25 +63,22 @@ class MainActivity : AppCompatActivity() {
 
                 }
             }
+        })
 
-        })*/
-
-        btn_login.setOnClickListener {
-            val intent = Intent(this, PokemonListActivity::class.java)
-            startActivity(intent)
-        }
+        /* btn_signIn.setOnClickListener {
+                    val intent = Intent(this, PokemonListActivity::class.java)
+                    startActivity(intent)
+                }*/
         btn_account.setOnClickListener {
             val intent = Intent(this, CreateAccount::class.java)
             startActivity(intent)
         }
-
-
-        /*login_button.setOnClickListener {
+        btn_signIn.setOnClickListener {
             mainViewModel.onClickedLogin(
                 login_edit.text.toString().trim(),
                 password_edit.text.toString()
             )
-        }*/
+        }
 
     }
 }

@@ -17,11 +17,11 @@ class MainViewModel(
 
     val loginLiveData: MutableLiveData<LoginStatus> = MutableLiveData()
 
-    fun onClickedLogin(emailUser: String, password: String) {
+    fun onClickedLogin(emailUser: String, passwordUser: String) {
         viewModelScope.launch(Dispatchers.IO) {
-            val user: User? = getUserUseCase.invoke(emailUser)
+            val user: User? = getUserUseCase.invoke(emailUser, passwordUser)
             val loginStatus = if (user != null) {
-                LoginSuccess(user.email)
+                LoginSuccess(user.email, user.password)
             } else {
                 LoginError
             }

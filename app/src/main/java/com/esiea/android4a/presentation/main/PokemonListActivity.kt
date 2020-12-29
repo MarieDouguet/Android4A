@@ -9,6 +9,7 @@ import android.view.Menu
 import android.view.MenuItem
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
@@ -39,6 +40,10 @@ class PokemonListActivity : AppCompatActivity(), PokemonAdapter.OnPokemonItemCli
         super.onCreate(savedInstanceState)
         setContentView(R.layout.content_pokemon_list)
 
+
+        val toolbar : Toolbar = findViewById(R.id.toolbar)
+        setSupportActionBar(toolbar)
+        supportActionBar!!.setTitle("Pokedex")
 
         val moshi = Moshi.Builder()
             .add(KotlinJsonAdapterFactory())

@@ -8,15 +8,13 @@ import com.esiea.android4a.data.local.models.UserLocal
 
 @Dao
 interface DatabaseDao {
-    @Query("SELECT * FROM userlocal")
+    @Query("SELECT * FROM USERS")
     fun getAll(): List<UserLocal>
 
-    @Query("SELECT * FROM userlocal WHERE email LIKE :email LIMIT 1")
-    fun findByName(email: String): UserLocal?
+    @Query("SELECT * FROM users WHERE users.email LIKE :email AND " + "users.password LIKE :password LIMIT 1")
+    fun findByName(email: String, password: String): UserLocal?
 
     @Insert
     fun insert(user: UserLocal)
 
-    @Delete
-    fun delete(user: UserLocal)
 }
