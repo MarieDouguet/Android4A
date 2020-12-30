@@ -20,7 +20,7 @@ API utilisée : https://raw.githubusercontent.com/Biuni/PokemonGO-Pokedex/master
 
 ## Consignes respectées
 
-* Language Kotlin 
+* Langage Kotlin 
 * Architecture MVVM
 * Clean Architecture
 * Appel Webservice à une API REST 
