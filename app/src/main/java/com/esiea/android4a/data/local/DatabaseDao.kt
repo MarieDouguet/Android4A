@@ -1,6 +1,5 @@
 package com.esiea.android4a.data.local
 
-import androidx.lifecycle.LiveData
 import androidx.room.*
 import com.esiea.android4a.data.local.models.UserLocal
 

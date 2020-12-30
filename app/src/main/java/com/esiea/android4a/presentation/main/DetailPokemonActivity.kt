@@ -5,11 +5,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.esiea.android4a.R
-import com.esiea.android4a.data.local.models.Pokemon
 import com.squareup.picasso.Picasso
-import kotlinx.android.synthetic.main.activity_create_account.*
-import kotlinx.android.synthetic.main.activity_detail_pokemon.view.*
-import kotlinx.android.synthetic.main.activity_main.*
 
 class DetailPokemonActivity : AppCompatActivity() {
 
