@@ -17,19 +17,21 @@ Projet de programmation web orientée mobile 4A en __Kotlin__.
 ## Consignes respectées
 
 * Language Kotlin 
-* Utilisation partielle de l'architecture MVVM
-* Utilisation partielle de la Clean Architecture
+* Architecture MVVM
+* Clean Architecture
 * Appel Webservice à une API REST 
 * Affichage d’une liste 
 * Design
-* Quelques tests unitaires
+* Création d'une base données avec utilisation de Room 
 * Fonction(s) supplémentaire(s) : 
    * Ecran avec le détail d'un élément de la liste 
+   * Quelques tests unitaires
 
 
 ## Fonctionnalités
 
 ### Logo de l'application 
+
 
 ### Ecran Splash
 
