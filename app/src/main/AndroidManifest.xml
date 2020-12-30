@@ -14,8 +14,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar"
         android:usesCleartextTraffic="true">
-        <activity android:name=".presentation.main.DetailPokemonActivity"></activity>
-        <activity android:name=".presentation.main.PokemonListActivity" />
+        <activity android:name=".presentation.main.AuthentificationActivity"></activity>
+        <activity android:name=".presentation.main.DetailPokemonActivity" />
+        <activity android:name=".presentation.recyclerView.PokemonListActivity" />
         <activity
             android:name=".presentation.main.SplashActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
@@ -25,8 +26,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".presentation.main.CreateAccount" />
-        <activity android:name=".presentation.main.MainActivity" />
+        <activity android:name=".presentation.createAccount.CreateAccountActivity" />
+        <activity android:name=".presentation.login.MainActivity" />
 
         <meta-data
             android:name="preloaded_fonts"

@@ -1,7 +1,6 @@
 package com.esiea.android4a.presentation.main
 
 import android.content.Intent
-import android.media.MediaPlayer
 import android.os.Bundle
 import android.os.Handler
 import android.view.WindowManager
@@ -9,6 +8,7 @@ import android.view.animation.AnimationUtils
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import com.esiea.android4a.R
+import com.esiea.android4a.presentation.login.MainActivity
 
 
 class SplashActivity : AppCompatActivity() {

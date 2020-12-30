@@ -1,4 +1,4 @@
-package com.esiea.android4a.data.remote
+package com.esiea.android4a.data.remote.api
 
 import com.esiea.android4a.data.local.models.Result
 import retrofit2.Call

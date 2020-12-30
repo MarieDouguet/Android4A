@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">Android4A</string>
     <string name="error">Error</string>
+    <string name="error_email">Please enter an email</string>
+    <string name="error_password">Please enter a password</string>
     <string name="firstname">Firstname</string>
     <string name="lastname">Lastname</string>
     <string name="email">Email</string>

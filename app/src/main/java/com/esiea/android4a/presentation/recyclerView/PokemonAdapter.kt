@@ -1,9 +1,8 @@
-package com.esiea.android4a.presentation.main
+package com.esiea.android4a.presentation.recyclerView
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Filter
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
@@ -46,7 +45,7 @@ class PokemonAdapter(private val pokemonList: MutableList<Pokemon>, var clickLis
         val pokemon_type: TextView = itemView.findViewById(R.id.pokemon_type)
         val pokemon_image: ImageView = itemView.findViewById(R.id.pokemon_image)
 
-        fun initialize(pokemon: Pokemon, action:OnPokemonItemClickListener){
+        fun initialize(pokemon: Pokemon, action: OnPokemonItemClickListener){
             pokemon_name.text = pokemon.name
             pokemon_type.text = pokemon.type.toString()
             Glide.with(itemView.context)

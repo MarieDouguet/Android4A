@@ -42,7 +42,6 @@ dependencies {
     def version_moshi = "1.8.0"
 
     ext.retrofit_version = '2.5.0'
-    ext.okhttp_version = '3.11.0'
 
     //ANDROID
     implementation fileTree(dir: "libs", include: ["*.jar"])
@@ -66,6 +65,11 @@ dependencies {
 
     testImplementation "io.mockk:mockk:1.10.2"
 
+    //OkHttp
+    implementation "com.squareup.okhttp3:okhttp:4.0.1"
+    implementation "com.squareup.okhttp3:logging-interceptor:4.0.1"
+    implementation "com.squareup.okhttp3:okhttp-urlconnection:4.0.1"
+
     //To insert emoji
     implementation "androidx.emoji:emoji-appcompat:1.2.0-alpha01"
 
@@ -80,7 +84,6 @@ dependencies {
     //retrofit
     implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
     implementation "com.squareup.retrofit2:converter-moshi:$retrofit_version"
-    implementation "com.squareup.okhttp3:okhttp:$okhttp_version"
     implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
     implementation "com.squareup.retrofit2:adapter-rxjava:$retrofit_version"
     implementation "com.squareup.retrofit2:retrofit:$retrofit_version"

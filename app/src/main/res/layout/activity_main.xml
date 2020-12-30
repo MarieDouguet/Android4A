@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="@dimen/spacing_normal"
-    tools:context=".presentation.main.MainActivity">
+    tools:context=".presentation.login.MainActivity">
 
     <ImageView
         android:id="@+id/pokemon"
@@ -22,7 +22,7 @@
         android:id="@+id/login_input_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Login"
+        android:hint="Email"
         app:layout_constraintVertical_chainStyle="packed"
         app:layout_constraintTop_toBottomOf="@id/pokemon"
         app:layout_constraintTop_toTopOf="parent"
@@ -34,7 +34,7 @@
             android:id="@+id/login_edit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="text"/>
+            android:inputType="textEmailAddress"/>
 
     </com.google.android.material.textfield.TextInputLayout>
 

@@ -1,22 +1,16 @@
-package com.esiea.android4a.presentation.main
+package com.esiea.android4a.presentation.recyclerView
 
 import android.content.Intent
 import android.os.Bundle
-import android.text.Editable
-import android.text.TextWatcher
 import android.util.Log
-import android.view.Menu
-import android.view.MenuItem
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
-import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.esiea.android4a.R
 import com.esiea.android4a.data.local.models.Pokemon
-import com.esiea.android4a.data.remote.ApiService
+import com.esiea.android4a.data.remote.api.ApiService
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import kotlinx.android.synthetic.main.content_pokemon_list.*
@@ -27,6 +21,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import java.io.IOException
 import com.esiea.android4a.data.local.models.Result
+import com.esiea.android4a.presentation.main.DetailPokemonActivity
 import kotlinx.android.synthetic.main.activity_detail_pokemon.*
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.pokemon_row.*

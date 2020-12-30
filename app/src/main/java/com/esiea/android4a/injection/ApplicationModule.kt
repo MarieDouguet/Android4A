@@ -7,14 +7,15 @@ import com.esiea.android4a.data.local.DatabaseDao
 import com.esiea.android4a.data.repository.UserRepository
 import com.esiea.android4a.domain.usecase.CreateUserUseCase
 import com.esiea.android4a.domain.usecase.GetUserUseCase
-import com.esiea.android4a.presentation.main.MainViewModel
+import com.esiea.android4a.presentation.createAccount.CreateAccountViewModel
+import com.esiea.android4a.presentation.login.MainViewModel
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.module.Module
 import org.koin.dsl.module
-import kotlin.math.sin
 
 val presentationModule = module {
-    factory { MainViewModel(get(), get()) }
+    factory { MainViewModel(get()) }
+    factory { CreateAccountViewModel(get()) }
 
 
 }

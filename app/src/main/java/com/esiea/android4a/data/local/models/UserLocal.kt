@@ -5,10 +5,11 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.esiea.android4a.domain.entity.User
 
-@Entity(tableName = "users")
+@Entity
 data class UserLocal(
     @ColumnInfo(name = "email") val email: String,
     @ColumnInfo(name = "password") val password: String
+
 ){
     @PrimaryKey(autoGenerate = true) var uid: Int? = null
 
@@ -16,14 +17,15 @@ data class UserLocal(
 
 fun User.toData() : UserLocal{
     return UserLocal(
-        email = this.email,
-        password = this.password
+        email = email,
+        password = password
+
     )
 }
 
 fun UserLocal.toEntity() : User{
     return User(
-        email = this.email,
-        password = this.password
+        email = email,
+        password = password
     )
 }
